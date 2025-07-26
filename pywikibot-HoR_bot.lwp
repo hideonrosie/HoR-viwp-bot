@@ -1,0 +1,12 @@
+#LWP-Cookies-2.0
+Set-Cookie3: viwikiBlockID=127021%2183f00c15708be167d65939c48d3c5004d663974b206237a47896d5a71d0eda8e41a73ec223a028cd8f0b3c100fa7c3b2690e3c0388224efc093d88be6ac03743; path="/"; domain=vi.wikipedia.org; path_spec; secure; expires="2025-07-26 02:42:17Z"; version=0
+Set-Cookie3: WMF-Last-Access=25-Jul-2025; path="/"; domain=vi.wikipedia.org; path_spec; secure; expires="2025-08-26 00:00:00Z"; HttpOnly=None; version=0
+Set-Cookie3: NetworkProbeLimit=0.001; path="/"; domain=vi.wikipedia.org; path_spec; secure; expires="2025-07-25 03:42:17Z"; SameSite=None; version=0
+Set-Cookie3: viwikiSession=80mnt21i0nunlbn70luh2j83t4dhe7k8; path="/"; domain=vi.wikipedia.org; path_spec; secure; discard; HttpOnly=None; SameSite=None; version=0
+Set-Cookie3: viwiki_BPsession=noal1a9lvdjj990kth345l0ct5m52068; path="/"; domain=vi.wikipedia.org; path_spec; secure; discard; HttpOnly=None; version=0
+Set-Cookie3: loginnotify_prevlogins=2025-x0ziz3-ndgg5bgfhtfd4702v89wqvlt9k85up6; path="/"; domain=vi.wikipedia.org; path_spec; secure; expires="2026-01-21 02:42:35Z"; HttpOnly=None; version=0
+Set-Cookie3: cpPosIndex=2%401753411356%23251d9e040d7b61b9beffaaa92c58ba1a; path="/"; domain=vi.wikipedia.org; path_spec; secure; expires="2025-07-25 02:42:45Z"; HttpOnly=None; version=0
+Set-Cookie3: UseDC=master; path="/"; domain=vi.wikipedia.org; path_spec; secure; expires="2025-07-25 02:42:45Z"; HttpOnly=None; version=0
+Set-Cookie3: WMF-Last-Access-Global=25-Jul-2025; path="/"; domain=.wikipedia.org; path_spec; domain_dot; secure; expires="2025-08-26 00:00:00Z"; HttpOnly=None; version=0
+Set-Cookie3: GeoIP="VN:HN:Hanoi:21.02:105.85:v4"; path="/"; domain=.wikipedia.org; path_spec; domain_dot; secure; discard; version=0
+Set-Cookie3: WMF-Uniq=os3EZSbKLatk6Wb_zdSO4wI7AAEBAFvdw30NvX-OCjYGT272jpnihZSxSyadBScV; path="/"; domain=.wikipedia.org; path_spec; domain_dot; secure; expires="2026-07-25 00:00:00Z"; HttpOnly=None; SameSite=None; version=0
