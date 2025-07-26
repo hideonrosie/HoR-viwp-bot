@@ -99,23 +99,37 @@ def is_commons_file(filename, config):
         print(f'[Lỗi kiểm tra Commons] {filename}: {e}')
         return False
 
-def write_report(filename, rev_id, user, title):
+def write_report(filename, rev_id, user, title, reported_cache):
     today = datetime.datetime.utcnow().strftime('%Y-%m-%d')
     report_title = REPORT_PAGE_PREFIX + today
     report_page = pywikibot.Page(SITE, report_title)
+
+    cache_key = (rev_id, filename, title)
+    if cache_key in reported_cache:
+        print(f"Đã có trong cache: {cache_key}")
+        return
+    reported_cache.add(cache_key)
 
     diff_link = f'[[Đặc biệt:Khác/{rev_id}|{title}]]'
     file_link = f'[[:c:File:{filename}]]'
     user_link = f'{{{{user|{user}}}}}'
     line = f'|-\n| {diff_link} || {file_link} || {user_link}'
 
-    if not report_page.exists():
+    if report_page.exists():
+        current_text = report_page.text
+        if file_link in current_text and title in current_text:
+            print(f"Đã có trong trang wiki: {filename} tại bài {title}, bỏ qua.")
+            return
+    else:
+        current_text = ''
+
+    if not current_text:
         report_page.text = (
             '{| class="wikitable"\n'
             '! Bài !! Tập tin thêm vào !! Người thêm\n' f'{line}\n|}}'
         )
     else:
-        text = report_page.text.strip()
+        text = current_text.strip()
         if text.endswith('|}'):
             text = text[:-2].rstrip() + f'\n{line}\n|}}'
         else:
@@ -123,6 +137,8 @@ def write_report(filename, rev_id, user, title):
         report_page.text = text
 
     report_page.save(summary='Bot: Ghi báo cáo hình ảnh từ Commons')
+
+reported_cache = set() 
 
 def run():
     config = load_config()
@@ -169,7 +185,7 @@ def run():
                     if file_count >= MAX_FILES_PER_HOUR:
                         break
                     if is_commons_file(fname, config):
-                        write_report(fname, revid, user, title)
+                        write_report(fname, revid, user, title, reported_cache)
                         file_count += 1
 
                 last_timestamp = change['timestamp']
